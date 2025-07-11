@@ -144,6 +144,4 @@ cat ~/.ssh/id_ed25519.pub
 
 * Và dán vào trang GitHub > Settings > SSH and GPG keys > New SSH key
 
----
 
-> ✅ Đã hoàn tất các bước cấu hình cơ bản cho NixOS, Home Manager, tmux và Git. Hãy commit lại file README.md này để lưu lại quy trình!
