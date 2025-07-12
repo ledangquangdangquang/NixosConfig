@@ -7,6 +7,7 @@
     ./tmux.nix
     ./bash.nix
     ./starship.nix
+    ./hyprland
     # ./wofi.nix
     # ./waybar.nix
   ];
