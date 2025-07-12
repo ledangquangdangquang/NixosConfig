@@ -4,9 +4,15 @@
 		htop
 		neofetch
 		nerd-fonts.fira-code
+		nerd-fonts.jetbrains-mono
 		tree
 		wl-clipboard
-		kitty
-		waybar
+		
+		# --- Hyprland apps ---
+		# waybar
+		# wofi
+		swww
+		networkmanagerapplet
+		hyprpaper
 	];
 }
