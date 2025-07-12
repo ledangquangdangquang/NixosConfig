@@ -1,6 +1,6 @@
 {
 	import = [
-		./config.nix
+		./hyprland.nix
 		./blind.nix
 	];
 }

@@ -72,9 +72,6 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = false;
-
   environment.systemPackages = with pkgs; [
 	  vim
 	  home-manager

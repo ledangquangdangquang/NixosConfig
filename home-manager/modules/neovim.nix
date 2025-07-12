@@ -25,7 +25,18 @@
 			hardtime-nvim
 			render-markdown-nvim
 			transparent-nvim
+			neoscroll-nvim
 		];
+
+		extraLuaConfig = ''
+			require('neoscroll').setup({
+			      easing_function = "sine",
+			      hide_cursor = true,
+			      stop_eof = true,
+			      respect_scrolloff = false,
+			      cursor_scrolls_alone = true
+			})
+		'';
 	};
 }
 
