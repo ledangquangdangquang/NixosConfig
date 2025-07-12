@@ -1,5 +1,6 @@
 {
 	imports = [
+		# --- File ---
 		./alacritty.nix
 		./git.nix
 		./neovim.nix
@@ -7,8 +8,12 @@
 		./tmux.nix
 		./bash.nix
 		./starship.nix
-		./hyprland
-		# ./waybar
 		./fzf.nix
+		./firefox.nix
+
+		# --- Folder ---
+		./hyprland
+		./waybar
+		./wofi
 	];
 }

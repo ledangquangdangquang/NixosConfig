@@ -9,11 +9,4 @@
 		homeDirectory = "/home/${user}";
 		stateVersion = homeStateVersion;
 	};
-
-	programs.firefox = {
-		enable = true;
-	};
-	# programs.fzf= {
-	# 	enable = true;
-	# };
 }
