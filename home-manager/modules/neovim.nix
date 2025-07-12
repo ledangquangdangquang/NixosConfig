@@ -24,6 +24,7 @@
 			catppuccin-vim
 			hardtime-nvim
 			render-markdown-nvim
+			transparent-nvim
 		];
 	};
 }

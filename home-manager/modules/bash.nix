@@ -6,7 +6,8 @@
 		'';
 		shellAliases = {
 			home-rebuild = "home-manager switch --flake ./";
-			nixos-rebuild = "nixos-rebuild switch --flake ./";
+			nixos-rebuild = "sudo nixos-rebuild switch --flake ./";
+			y = "yazi";
 		};
 	};
 }

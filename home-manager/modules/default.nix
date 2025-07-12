@@ -7,6 +7,7 @@
     ./tmux.nix
     ./bash.nix
     ./starship.nix
-#    ./firefox.nix
+    # ./wofi.nix
+    # ./waybar.nix
   ];
 }
