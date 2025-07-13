@@ -9,6 +9,8 @@
 		./bash.nix
 		./starship.nix
 		./fzf.nix
+		./gtk.nix
+		./spicetify.nix
 
 		# --- Folder ---
 		./hyprland

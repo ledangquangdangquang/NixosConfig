@@ -3,6 +3,10 @@
 		enable = true;
 		userName = "ledangquangdangquang";
 		userEmail = "quang.ld224113@sis.hust.edu.vn";
+		extraConfig = { 
+			init.defaultBranch = "main";
+			credential.helper = "store";
+		};
 	};
 	programs.ssh = {
 		enable = true;
