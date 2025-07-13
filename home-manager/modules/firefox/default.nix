@@ -11,6 +11,7 @@
     };
   in
 {
+  home.file."~/.mozilla/firefox/profile_0".source = ./FirefoxCss;
   programs = {
     firefox = {
       enable = true;
@@ -21,13 +22,16 @@
 
           /* ---- EXTENSIONS ---- */
           ExtensionSettings = {
-            "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
+            # "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
             # uBlock Origin:
             "uBlock0@raymondhill.net" = {
               install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
               installation_mode = "force_installed";
             };
-            # add extensions here...
+	    # Vimium 
+	    # Tampermonkey
+	    # Bitwarden
+	    # Authentic...
           };
   
           /* ---- PREFERENCES ---- */
@@ -52,7 +56,7 @@
           isDefault = true;     # can be omitted; true if profile ID is 0
           settings = {          # specify profile-specific preferences here; check about:config for options
             "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
-            "browser.startup.homepage" = "https://nixos.org";
+            # "browser.startup.homepage" = "https://nixos.org";
             "browser.newtabpage.pinned" = [{
               title = "NixOS";
               url = "https://nixos.org";
