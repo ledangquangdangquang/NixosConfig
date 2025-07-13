@@ -1,6 +1,5 @@
 {
 	imports = [
-		./blind.nix
+		./hyprland.nix
 	];
-	wayland.windowManager.hyprland.enable = true;
 }
