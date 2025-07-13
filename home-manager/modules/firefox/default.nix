@@ -11,7 +11,9 @@
     };
   in
 {
-  home.file."~/.mozilla/firefox/profile_0".source = ./FirefoxCss;
+  home.file.".mozilla/firefox/profile_0/user.js".source = ./FirefoxCss/user.js;
+  home.file.".mozilla/firefox/profile_0/chrome/userChrome.css".source = ./FirefoxCss/chrome/userChrome.css;
+  home.file.".mozilla/firefox/profile_0/chrome/userContent.css".source = ./FirefoxCss/chrome/userContent.css;
   programs = {
     firefox = {
       enable = true;
