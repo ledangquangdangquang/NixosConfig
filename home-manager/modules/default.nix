@@ -9,11 +9,11 @@
 		./bash.nix
 		./starship.nix
 		./fzf.nix
-		./firefox.nix
 
 		# --- Folder ---
 		./hyprland
 		./waybar
 		./wofi
+		./firefox
 	];
 }
