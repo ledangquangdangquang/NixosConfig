@@ -17,6 +17,9 @@ sudo nixos-rebuild switch --flake ./
 home-manager switch --flake ./
 ```
 
+> [NOTE]
+> `git add .` and `git commit` before `home-manager switch --flake ./` 
+> Because flake read git commit to update file and new folder.
 ---
 
 ## 🔍 Kiểm tra option có tồn tại không (ví dụ với Git)
