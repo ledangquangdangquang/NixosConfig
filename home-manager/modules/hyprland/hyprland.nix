@@ -27,11 +27,16 @@
 				"$mod, A, exec, alacritty"
 				"$mod, Q, killactive"
 				"$mod, M, exit"
-				"$mod, D, exec, wofi --show drun"
+				"$mod, SPACE, exec, wofi --show drun"
 				"$mod, l, movefocus, r"
 				"$mod, h, movefocus, l"
 				"$mod, j, movefocus, d"
 				"$mod, k, movefocus, u"
+				
+				"$mod SHIFT, l, movewindow, r"
+				"$mod SHIFT, h, movewindow, l"
+				"$mod SHIFT, j, movewindow, d"
+				"$mod SHIFT, k, movewindow, u"
 			]
 			++ (
 				builtins.concatLists (builtins.genList (i:
