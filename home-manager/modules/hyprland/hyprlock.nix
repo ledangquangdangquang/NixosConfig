@@ -27,7 +27,7 @@
     # BACKGROUND
     background {
       monitor =
-      path = ~/Pictures/wallpapers/others/cat-leaves.png
+      path = ~/Pictures/cat-leaves.png
       color = $base
       blur_passes = 0
     }
@@ -63,7 +63,7 @@
 
     image {
       monitor = 
-      path = ~/Pictures/pp/pp.png
+      path = ~/Pictures/ava.jpg
       size = 125
       border_color = $accent
 

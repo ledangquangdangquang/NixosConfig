@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
   # Bootloader.
@@ -41,9 +41,13 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "catppuccin-mocha";
+  };
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "vn";
@@ -75,7 +79,8 @@
   environment.systemPackages = with pkgs; [
 	  vim
 	  home-manager
-  ];
+	  catppuccin-sddm
+	  ];
   system.stateVersion = "24.11"; # Did you read the comment?
 	nix.settings = {
 		experimental-features = [ "flakes"  "nix-command"];
@@ -84,11 +89,5 @@
 		trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
 	};
 	programs.hyprland.enable = true;
-	# programs.hyprland = {
-	# 	enable = true;
-	# 	package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-	# 	portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-	# };
-
 
 }

@@ -14,6 +14,7 @@
   home.file.".mozilla/firefox/profile_0/user.js".source = ./FirefoxCss/user.js;
   home.file.".mozilla/firefox/profile_0/chrome/userChrome.css".source = ./FirefoxCss/chrome/userChrome.css;
   home.file.".mozilla/firefox/profile_0/chrome/userContent.css".source = ./FirefoxCss/chrome/userContent.css;
+
   programs = {
     firefox = {
       enable = true;
@@ -76,7 +77,53 @@
             "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
             "browser.startup.homepage" = "about:home";
           };
-        };
+		search = {
+			default = "google"; 
+
+		 engines = {
+	      "Nix Packages" = {
+		urls = [
+		  {
+		    template = "https://search.nixos.org/packages";
+		    params = [
+		      { name = "channel"; value = "unstable"; }
+		      { name = "query";   value = "{searchTerms}"; }
+		    ];
+		  }
+		];
+		icon           = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+		definedAliases = [ "@np" ];
+	      };
+
+	      "Nix Options" = {
+		urls = [
+		  {
+		    template = "https://search.nixos.org/options";
+		    params = [
+		      { name = "channel"; value = "unstable"; }
+		      { name = "query";   value = "{searchTerms}"; }
+		    ];
+		  }
+		];
+		icon           = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+		definedAliases = [ "@no" ];
+	      };
+
+	      "NixOS Wiki" = {
+		urls = [
+		  {
+		    template = "https://wiki.nixos.org/w/index.php";
+		    params = [
+		      { name = "search"; value = "{searchTerms}"; }
+		    ];
+		  }
+		];
+		icon           = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+		definedAliases = [ "@nw" ];
+	      };
+	    };
+		};
+	};
         profile_1 = {
           id = 1;
           name = "profile_1";

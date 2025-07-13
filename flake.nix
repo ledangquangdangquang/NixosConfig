@@ -6,7 +6,10 @@
 			url = "github:nix-community/home-manager/master";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-		# hyprland = {
+		spicetify-nix = {
+			url = "github:gerg-l/spicetify-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 		# 	url = "github:hyprwm/Hyprland";
 		# 	inputs.nixpkgs.follows = "nixpkgs";
 		# };

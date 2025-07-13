@@ -37,6 +37,12 @@
 				"$mod SHIFT, h, movewindow, l"
 				"$mod SHIFT, j, movewindow, d"
 				"$mod SHIFT, k, movewindow, u"
+
+
+				"$mod SHIFT, LEFT, resizeactive, -20 0"
+				"$mod SHIFT, RIGHT, resizeactive, 20 0"
+				"$mod SHIFT, DOWN, resizeactive, 0 20"
+				"$mod SHIFT, UP, resizeactive, 0 -20"
 			]
 			++ (
 				builtins.concatLists (builtins.genList (i:
