@@ -31,9 +31,25 @@
               installation_mode = "force_installed";
             };
 	    # Vimium 
+            "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4524018/vimium_ff-2.3.xpi";
+              installation_mode = "force_installed";
+            };
 	    # Tampermonkey
+            "firefox@tampermonkey.net" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4405733/tampermonkey-5.3.3.xpi";
+              installation_mode = "force_installed";
+            };
 	    # Bitwarden
-	    # Authentic...
+            "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4525374/bitwarden_password_manager-2025.6.1.xpi";
+              installation_mode = "force_installed";
+            };
+	    # Authenticator
+            "authenticator@mymindstorm" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4353166/auth_helper-8.0.2.xpi";
+              installation_mode = "force_installed";
+            };
           };
   
           /* ---- PREFERENCES ---- */
@@ -42,7 +58,7 @@
             "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
             "extensions.pocket.enabled" = lock-false;
             "extensions.screenshots.disabled" = lock-true;
-            # add global preferences here...
+	    "layout.css.prefers-color-scheme.content-override"  = 0;
           };
         };
       };
@@ -58,12 +74,7 @@
           isDefault = true;     # can be omitted; true if profile ID is 0
           settings = {          # specify profile-specific preferences here; check about:config for options
             "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
-            # "browser.startup.homepage" = "https://nixos.org";
-            "browser.newtabpage.pinned" = [{
-              title = "NixOS";
-              url = "https://nixos.org";
-            }];
-            # add preferences for profile_0 here...
+            "browser.startup.homepage" = "about:home";
           };
         };
         profile_1 = {
