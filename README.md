@@ -147,4 +147,40 @@ cat ~/.ssh/id_ed25519.pub
 
 * Và dán vào trang GitHub > Settings > SSH and GPG keys > New SSH key
 
+## Cài tiếng việt 
+Thì nếu dùng Gnome mặc định là ibus có thể kiểm tra bằng cách 
+```bash
+echo $XMODIFIERS
+```
+
+nếu ra `@im=ibus` thì đang dùng ibus. Bây giờ chuyển sang dùng `Fcitx5` 
+
+Hướng dẫn trên Ubuntu
+```bash
+sudo apt install fcitx5 fcitx5-config-qt fcitx5-frontend-gtk3 fcitx5-frontend-gtk4 fcitx5-frontend-qt5 fcitx5-unikey
+```
+Thêm biến môi trường fcitx5  
+```bash
+sudo nvim /etc/enviroment
+```
+Thêm vào cuối file 
+```
+GTK_IM_MODULE=fcitx5
+QT_IM_MODULE=fcitx5
+XMODIFIERS="@im=fcitx5"
+INPUT_METHOD=fcitx5
+```
+Xong logout vào lại
+
+Vào fcitx5-config-qt để thêm tiếng việt
+
+Bỏ tick Only show current language 
+
+Search input tiếng việt rồi add vào là xong.
+
+Logout vào lại 
+Kiểm tra xem có tiếng việt chưa
+
+Kiểm tra biến môi trường 
+
 
