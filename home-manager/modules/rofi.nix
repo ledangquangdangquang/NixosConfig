@@ -1,9 +1,9 @@
 { pkgs, catppuccin,  ... }:
 {
-  # catppuccin.rofi = {
-  #   enable = true;
-  #   flavor = "mocha";
-  # };
+  catppuccin.rofi = {
+    enable = true;
+    flavor = "mocha";
+  };
 
   programs.rofi = {
     enable = true;
