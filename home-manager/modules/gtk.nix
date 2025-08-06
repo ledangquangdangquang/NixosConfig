@@ -1,12 +1,15 @@
-{ pkgs, config, ... }:
 {
+  pkgs,
+  config,
+  ...
+}: {
   fonts.fontconfig.enable = true;
   home.packages = [
     # pkgs.nerdfonts
     pkgs.twemoji-color-font
     pkgs.noto-fonts-emoji
-	pkgs.nerd-fonts.noto
-	pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.noto
+    pkgs.nerd-fonts.jetbrains-mono
   ];
 
   gtk = {
@@ -23,8 +26,8 @@
       };
     };
     theme = {
-      name = "Dracula";
-      package = pkgs.dracula-theme;
+      name = "Cattppuccin";
+      package = pkgs.catppuccin;
     };
     cursorTheme = {
       name = "Nordzy-cursors";
@@ -32,7 +35,7 @@
       size = 30;
     };
   };
-  
+
   home.pointerCursor = {
     name = "Nordzy-cursors";
     package = pkgs.nordzy-cursor-theme;
