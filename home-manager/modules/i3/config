@@ -13,7 +13,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Start poly bar
 exec --no-startup-id polybar quangbar
 # Start wallpaper
-exec --no-startup-id feh --bg-scale ~/NixosConfig/home-manager/modules/i3/wallpaper.jpg
+exec --no-startup-id feh --bg-scale ~/NixosConfig/home-manager/modules/i3/wallpaper.png
 # NetworkManager tray icon
 exec --no-startup-id nm-applet
 # Screenshot
@@ -24,9 +24,9 @@ bindsym F8 exec gnome-screenshot -f ~/Pictures/Screenshots/screenshot.png
 set $refresh_i3status killall -SIGUSR1 i3status
 
 # Tăng âm lượng
-bindsym F9 exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%+ && $refresh_i3status
+bindsym F10 exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%+ && $refresh_i3status
 # Giảm âm lượng
-bindsym F10 exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%- && $refresh_i3status
+bindsym F9 exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%- && $refresh_i3status
 bindsym F12 exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ 0 && $refresh_i3status
 bindsym F11 exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ 1 && $refresh_i3status
 

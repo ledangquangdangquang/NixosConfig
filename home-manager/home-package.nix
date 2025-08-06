@@ -3,6 +3,7 @@
 	home.packages = with pkgs; [
 		htop
 		neofetch
+		python314
 		nerd-fonts.fira-code
 		nerd-fonts.jetbrains-mono
 		tree
@@ -26,5 +27,8 @@
 		xfce.tumbler
 		# Screenshot
 		gnome-screenshot
+    # Lsp
+    nixd
+alejandra
 	];
 }

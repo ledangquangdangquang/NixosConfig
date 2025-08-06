@@ -6,10 +6,10 @@
     musicDirectory = "${builtins.getEnv "HOME"}/Music";
     network.listenAddress = "127.0.0.1";
     extraConfig = ''
-	audio_output {
-	  type "pipewire"
-	  name "Pipewire"
-	}
+      audio_output {
+        type "pipewire"
+        name "Pipewire"
+      }
     '';
   };
 
