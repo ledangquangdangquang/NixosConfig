@@ -2,8 +2,10 @@
   config,
   pkgs,
   firefox-addons,
+  inputs,
   ...
 }: {
+
   catppuccin.firefox.enable = true;
 
   programs.firefox = {
@@ -220,6 +222,7 @@
       extensions.packages = with firefox-addons; [
         vimium
         # tampermonkey
+        stylus
         bitwarden
         # ddict
         # authenticator

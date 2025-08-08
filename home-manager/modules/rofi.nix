@@ -1,5 +1,9 @@
-{ pkgs, catppuccin,  ... }:
 {
+  pkgs,
+  catppuccin,
+  inputs,
+  ...
+}: {
   catppuccin.rofi = {
     enable = true;
     flavor = "mocha";
@@ -20,5 +24,5 @@
     };
   };
 
-  home.packages = [ pkgs.bemoji ];
+  home.packages = [pkgs.bemoji];
 }

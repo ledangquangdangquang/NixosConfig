@@ -26,19 +26,19 @@
       };
     };
     theme = {
-      name = "Cattppuccin";
-      package = pkgs.catppuccin;
+      name = "Dracula";
+      package = pkgs.dracula-theme;
     };
     cursorTheme = {
-      name = "Nordzy-cursors";
-      package = pkgs.nordzy-cursor-theme;
+      name = "catppuccin-cursors";
+      package = pkgs.catppuccin-cursors.mochaMauve;
       size = 30;
     };
   };
 
   home.pointerCursor = {
-    name = "Nordzy-cursors";
-    package = pkgs.nordzy-cursor-theme;
+    name = "catppuccin-cursors";
+    package =  pkgs.catppuccin-cursors.mochaMauve;
     size = 22;
   };
 }

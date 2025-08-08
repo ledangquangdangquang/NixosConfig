@@ -15,7 +15,6 @@
 		./spicetify.nix
 		./rofi.nix
 		./mpc.nix
-		./xfce.nix
 		# ./picom.nix # De bo goc nhung may ao thi khong
 		
 		# --- Folder ---
