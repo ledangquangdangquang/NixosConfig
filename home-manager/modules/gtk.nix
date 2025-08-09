@@ -12,33 +12,32 @@
     pkgs.nerd-fonts.jetbrains-mono
   ];
 
+  catppuccin.gtk = {
+    icon = {
+      enable = true;
+      flavor = "mocha";
+    };
+  };
   gtk = {
     enable = true;
+    theme = {
+      name = "catppuccin-frappe-blue-standard";
+      package = pkgs.catppuccin-gtk;
+    };
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 11;
     };
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "lavender";
-      };
-    };
-    theme = {
-      name = "Dracula";
-      package = pkgs.dracula-theme;
-    };
     cursorTheme = {
-      name = "catppuccin-cursors";
-      package = pkgs.catppuccin-cursors.mochaMauve;
-      size = 30;
+      name = "Catppuccin-Mocha-Mauve-Cursors";
+      size = 24;
+      package = pkgs.catppuccin-cursors.mochaDark;
     };
   };
 
   home.pointerCursor = {
-    name = "catppuccin-cursors";
-    package =  pkgs.catppuccin-cursors.mochaMauve;
-    size = 22;
+    name = "Catppuccin-Mocha-Dark-Cursors";
+    package = pkgs.catppuccin-cursors.mochaDark;
+    size = 16;
   };
 }
