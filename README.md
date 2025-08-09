@@ -31,23 +31,46 @@
     ```
 
 ## KEYSHORTCUTS
-| Key | Description |
-|--------------- | --------------- |
-| `Super + Enter`| Open alacrrity|
-| `Super + D`   | Open rofi|
-| `Super + F`   | Open firefox|
-| `Super + Shift + e`| Exit i3   |
-| `Super + H/J/K/L`| Move with app|
-| `Super + R` then `H/J/K/L`| Resize mode|
-| `Super + Shift + F`| Fullcreen app|
-| `Super + Shift + Space`| Float app|
-| `Super + 1/2/3/4`| Move with workspace|
-| `Super + Q`| Quit the app|
-| `F8`| Screenshot|
-| `F9`| volume down|
-| `F10`| volume up|
-| `F11`| mute volume|
-| `F12`| unmute volume|
+### i3 (Mod key = SUPER key)
+| Key                                             | Description                                                           |
+| ----------------------------------------------- | --------------------------------------------------------------------- |
+| `Mod+Enter`                                     | Launch terminal (Alacritty)                                           |
+| `Mod+f`                                         | Launch Firefox                                                        |
+| `Mod+q`                                         | Close focused window                                                  |
+| `Mod+d`                                         | Launch application menu (Rofi)                                        |
+| `F8`                                            | Take a screenshot and save to `~/Pictures/Screenshots/screenshot.png` |
+| `F10` / `F9`                                    | Increase / decrease volume (+/-10%)                                   |
+| `F12` / `F11`                                   | Unmute / mute audio                                                   |
+| `Mod+h` / `Mod+j` / `Mod+k` / `Mod+l`           | Move focus left / down / up / right                                   |
+| `Mod+←` / `Mod+↓` / `Mod+↑` / `Mod+→`           | Move focus using arrow keys                                           |
+| `Mod+Shift+h/j/k/l`                             | Move focused window left / down / up / right                          |
+| `Mod+b` / `Mod+v`                               | Split container horizontally / vertically                             |
+| `Mod+Shift+f`                                   | Toggle fullscreen                                                     |
+| `Mod+s` / `Mod+w` / `Mod+e`                     | Switch layout: stacking / tabbed / toggle split                       |
+| `Mod+Shift+space`                               | Toggle floating mode for focused window                               |
+| `Mod+space`                                     | Toggle focus mode (tiling / floating)                                 |
+| `Mod+a`                                         | Focus parent container                                                |
+| `Mod+1` → `Mod+0`                               | Switch to workspace 1 → 10                                            |
+| `Mod+Shift+1` → `Mod+Shift+0`                   | Move container to workspace 1 → 10                                    |
+| `Mod+Shift+c`                                   | Reload i3 configuration                                               |
+| `Mod+Shift+r`                                   | Restart i3                                                            |
+| `Mod+Shift+e`                                   | Exit i3 session                                                       |
+| `Mod+r`                                         | Enter resize mode                                                     |
+| In resize mode: `h/j/k/l` or `←/↓/↑/→`          | Resize window                                                         |
+| `Return` / `Escape` / `Mod+r`                   | Exit resize mode                                                      |
+
+### Tmux
+| Key                                   | Description                                         |
+| ------------------------------------- | --------------------------------------------------- |
+| `Alt+r`                               | Reload tmux configuration file                      |
+| `Alt+1` → `Alt+9`                     | Quickly switch to window 1 → 9                      |
+| `Alt+h` / `Alt+l` / `Alt+k` / `Alt+j` | Move focus to pane left / right / up / down         |
+| `Alt+←` / `Alt+→` / `Alt+↑` / `Alt+↓` | Resize pane (left/right ±5, up/down ±3)             |
+| `Alt+s`                               | Split pane horizontally                             |
+| `Alt+v`                               | Split pane vertically                               |
+| `Alt+o`                               | Open Neovim with Telescope file search              |
+| `Alt+Shift+O`                         | Open Neovim with fuzzyvim file search (fzf preview) |
+| `Alt+n`                               | Create a new window                                 |
 
 > [!NOTE]
 > * See all keyshortcuts in `~/NixosConfig/home-manager/modules/i3/config` 
