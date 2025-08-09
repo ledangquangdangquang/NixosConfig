@@ -1,116 +1,54 @@
-# 🚀 Cài đặt NixOS từ Flake Repo
-
-Repo này chứa cấu hình NixOS + Home Manager dưới dạng flake.
-Có thể dùng để cài nhanh một hệ thống mới từ ISO NixOS (TTY only).
-
-## 1. Kết nối mạng
-
-```bash
-ping -c3 google.com
-```
-
-* Nếu WiFi:
-
-```bash
-nmtui
-```
+<h1 align="center"> My dotfile Nixos</h1>
 
 ---
+## INSTALL
+> [!NOTE]
+> Before install add features `flake` and `nix-command` in your `/etc/nixos/configuration.nix`
+> ```
+> nix.settings.experimental-features = ["flake" "nix-command"];
+> ```
+* Clone my repo.
+    ```
+    cd ~
+    git clone https://github.com/ledangquangdangquang/NixosConfig.git
+    ```
+* Install flake 
+    ```
+    sudo nixos-rebuild switch --flake ./#nixos 
+    ```
+    if your host is **virtual machine**
+    ```
+    sudo nixos-rebuild switch --flake ./#nixos-vm
+    ```
+* Install home-manager 
+    ```
+    home-manager switch --flake ./#quang@nixos
+    ```
+    if your host is **virtual machine**
+    ```
+    home-manager switch --flake ./#quang@nixos-vm
 
-## 2. Chia phân vùng ổ đĩa (ví dụ `/dev/sda`)
+    ```
 
-```bash
-parted /dev/sda -- mklabel gpt
-parted /dev/sda -- mkpart ESP fat32 1MiB 513MiB
-parted /dev/sda -- set 1 esp on
-parted /dev/sda -- mkpart primary ext4 513MiB 100%
-```
+## Keyshortcuts
+| Key | Description |
+|--------------- | --------------- |
+| `Super + Enter`| Open alacrrity|
+| `Super + D`   | Open rofi|
+| `Super + F`   | Open firefox|
+| `Super + Shift + e`| Exit i3   |
+| `Super + H/J/K/L`| Move with app|
+| `Super + R` then `H/J/K/L`| Resize mode|
+| `Super + Shift + F`| Fullcreen app|
+| `Super + Shift + Space`| Float app|
+| `Super + 1/2/3/4`| Move with workspace|
+| `Super + Q`| Quit the app|
+| `F8`| Screenshot|
+| `F9`| volume down|
+| `F10`| volume up|
+| `F11`| mute volume|
+| `F12`| unmute volume|
 
----
-
-## 3. Định dạng phân vùng
-
-```bash
-mkfs.vfat -F32 /dev/sda1   # EFI
-mkfs.ext4 /dev/sda2        # Root
-```
-
----
-
-## 4. Mount phân vùng
-
-```bash
-mount /dev/sda2 /mnt
-mkdir -p /mnt/boot
-mount /dev/sda1 /mnt/boot
-```
-
----
-
-## 5. Cài Git (nếu ISO chưa có)
-
-```bash
-nix-shell -p git
-```
-
----
-
-## 6. Clone repo cấu hình
-
-```bash
-git clone https://github.com/ledangquangdangquang/NixosConfig.git /mnt/root/nixos-config
-cd /mnt/root/nixos-config
-```
-
-> Nếu bạn muốn dùng SSH thay vì HTTPS thì thay URL bằng `git@github.com:ledangquangdangquang/NixosConfig.git`.
-
----
-
-## 7. Cài đặt NixOS bằng flake
-
-* Nếu cài trên máy thật:
-
-```bash
-nixos-install --flake .#nixos
-```
-
-* Nếu cài trên máy ảo:
-
-```bash
-nixos-install --flake .#nixos-vm
-```
-
-Đặt mật khẩu cho root khi được hỏi.
-
----
-
-## 8. Reboot
-
-```bash
-reboot
-```
-
----
-
-## 9. Sau khi đăng nhập với user đã định nghĩa trong flake
-
-```bash
-cd ~/nixos-config
-home-manager switch --flake .#<username>
-```
-
-* `<username>` = user được định nghĩa trong `home-manager/home.nix` (máy thật) hoặc `home-manager/home-vm.nix` (máy ảo).
-
----
-
-## 🔁 Cập nhật hệ thống về sau
-
-```bash
-cd ~/nixos-config
-sudo nixos-rebuild switch --flake .#<host>
-home-manager switch --flake .#<username>
-```
-
-* `<host>` = `nixos` hoặc `nixos-vm`
-* `<username>` = user bạn đã định nghĩa trong Home Manager
-
+> [!NOTE]
+> See all keyshortcuts in `~/NixosConfig/home-manager/modules/i3/config` 
+> See all keyshortcuts **tmux** in `~/NixosConfig/home-manager/modules/tmux.nix`

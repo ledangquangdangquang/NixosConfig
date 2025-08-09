@@ -65,8 +65,9 @@
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
         inherit inputs homeStateVersion user;
-        catppuccin = inputs.catppuccin;
         firefox-addons = inputs.firefox-addons.packages.${system};
+        catppuccin = inputs.catppuccin;
+        nix4nvchad = inputs.nix4nvchad;
       };
       modules = [./home-manager/home.nix];
     };
