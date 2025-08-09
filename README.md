@@ -2,6 +2,7 @@
 
 ---
 ## INSTALL
+Before install enter the **tty** (`Ctrl+Shift+F2`) to begin.
 > [!NOTE]
 > * Nixos version 25.05
 > * Before install add features `flake` and `nix-command` in your `/etc/nixos/configuration.nix`
@@ -10,8 +11,10 @@
 >   ```
 * ***Clone my repo***
     ```
+    nix-shell -p git
     cd ~
     git clone https://github.com/ledangquangdangquang/NixosConfig.git
+    cd NixosConfig
     ```
 * ***Replace `hardware-configuration.nix`***
     ```
