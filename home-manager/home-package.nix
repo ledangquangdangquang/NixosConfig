@@ -7,6 +7,7 @@
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
     tree
+    bat
     xclip
     polybarFull
     # --- Vietnamese tool ---

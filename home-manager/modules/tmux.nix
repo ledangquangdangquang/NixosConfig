@@ -47,6 +47,7 @@ catppuccin.tmux = {
       # bind -n M-o "nvim -c 'Telescope find_files'"
 
       bind -n M-o send-keys "nvim -c 'Telescope find_files'" C-m
+      bind -n M-O send-keys "fuzzyvim" C-m
       bind -n M-n new-window
     '';
 

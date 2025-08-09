@@ -5,6 +5,15 @@
     syntaxHighlighting.enable = true;
     initContent = ''
       export EDITOR=nvim
+      fuzzyvim() {
+        local file
+        file=$(find . -type f \
+          | fzf --layout=reverse \
+                --height=80% \
+                --preview 'bat --style=numbers --color=always {}' \
+                --preview-window=right:60%) || return
+        nvim "$file"
+      }
       if command -v tmux >/dev/null 2>&1; then
         if [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
           tmux attach-session -t default || tmux new-session -s default
