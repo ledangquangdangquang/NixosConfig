@@ -1,6 +1,9 @@
 <h1 align="center"> My dotfile Nixos</h1>
 
 ---
+## SHOWCASE
+![btop yazi and neofetch](./assets/btop-yazi-neofetch.png) 
+![zathura](./assets/zathura.png) 
 ## INSTALL
 Before install enter the **tty** (`Ctrl+Shift+F2`) to begin.
 > [!NOTE]

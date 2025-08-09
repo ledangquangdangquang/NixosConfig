@@ -2,6 +2,7 @@
 	imports = [
 		# --- File ---
 		./alacritty.nix
+    ./btop.nix
 		./git.nix
 		./neovim.nix
 		./yazi.nix
