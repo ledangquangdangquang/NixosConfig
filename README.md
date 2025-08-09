@@ -7,12 +7,12 @@
 > ```
 > nix.settings.experimental-features = ["flake" "nix-command"];
 > ```
-* Clone my repo.
+* ***Clone my repo***
     ```
     cd ~
     git clone https://github.com/ledangquangdangquang/NixosConfig.git
     ```
-* Install flake 
+* ***Install flake***
     ```
     sudo nixos-rebuild switch --flake ./#nixos 
     ```
@@ -20,7 +20,7 @@
     ```
     sudo nixos-rebuild switch --flake ./#nixos-vm
     ```
-* Install home-manager 
+* ***Install home-manager***
     ```
     home-manager switch --flake ./#quang@nixos
     ```
@@ -30,7 +30,7 @@
 
     ```
 
-## Keyshortcuts
+## KEYSHORTCUTS
 | Key | Description |
 |--------------- | --------------- |
 | `Super + Enter`| Open alacrrity|
