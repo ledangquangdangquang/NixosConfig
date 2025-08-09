@@ -5,6 +5,7 @@
 ![nixos](https://img.shields.io/badge/NixOS-24273A.svg?logo=nixos&logoColor=CAD3F5)
 ![nixpkgs](https://img.shields.io/badge/nixpkgs-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
 ![Home Manager](https://img.shields.io/badge/Home%20Manager-master-blue?logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
+![i3 Window Manager](https://img.shields.io/badge/i3-4.24-blue?logo=i3&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
 
 </div>
 
