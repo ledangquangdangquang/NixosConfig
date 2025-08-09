@@ -27,7 +27,6 @@
     if your host is **virtual machine**
     ```
     home-manager switch --flake ./#quang@nixos-vm
-
     ```
 
 ## KEYSHORTCUTS
