@@ -1,12 +1,22 @@
-{inputs, homeStateVersion, user, ... }: {
-	imports = [
-		./modules
-		./home-package.nix
+{
+  inputs,
+  homeStateVersion,
+  pkgs,
+  home-manager,
+  user,
+  ...
+}: {
+  imports = [
+    ./modules
+    ./home-package.nix
     inputs.catppuccin.homeModules.catppuccin
-	];
-	home = {
-		username = user;
-		homeDirectory = "/home/${user}";
-		stateVersion = homeStateVersion;
-	};
+  ];
+
+  home = {
+    username = user;
+    homeDirectory = "/home/${user}";
+    stateVersion = homeStateVersion;
+    sessionVariables = {
+    };
+  };
 }

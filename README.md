@@ -3,14 +3,23 @@
 ---
 ## INSTALL
 > [!NOTE]
-> Before install add features `flake` and `nix-command` in your `/etc/nixos/configuration.nix`
-> ```
-> nix.settings.experimental-features = ["flake" "nix-command"];
-> ```
+> * Nixos version 25.05
+> * Before install add features `flake` and `nix-command` in your `/etc/nixos/configuration.nix`
+>   ```
+>   nix.settings.experimental-features = ["flake" "nix-command"];
+>   ```
 * ***Clone my repo***
     ```
     cd ~
     git clone https://github.com/ledangquangdangquang/NixosConfig.git
+    ```
+* ***Replace `hardware-configuration.nix`***
+    ```
+    cp /etc/nixos/hardware-configuration.nix ~/NixosConfig/hosts/nixos/hardware-configuration.nix
+    ```
+    if your host is **virtual machine**
+    ```
+    cp /etc/nixos/hardware-configuration.nix ~/NixosConfig/hosts/nixos-vm/hardware-configuration.nix
     ```
 * ***Install flake***
     ```

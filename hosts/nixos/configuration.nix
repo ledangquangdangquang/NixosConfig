@@ -1,30 +1,23 @@
-{ config, pkgs, inputs,  ... }:
-
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-  # Bootloader.
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
+
+  # --- 1. BOOTLOADER (Bắt buộc cho hệ thống EFI) ---
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # --- 2. MẠNG ---
+  networking.hostName = "nixos-vm"; # Tên máy tính của bạn
+  networking.networkmanager.enable = true; # Dùng NetworkManager để quản lý WiFi, Ethernet dễ dàng.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
+  # --- 3. THỜI GIAN VÀ NGÔN NGỮ ---
   time.timeZone = "Asia/Ho_Chi_Minh";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "vi_VN";
     LC_IDENTIFICATION = "vi_VN";
@@ -37,27 +30,49 @@
     LC_TIME = "vi_VN";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
-  services.displayManager.sddm = {
+  i18n.inputMethod = {
+    type = "fcitx5";
     enable = true;
-    theme = "catppuccin-mocha";
-  };
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "vn";
-    variant = "us";
+    fcitx5.addons = with pkgs; [
+      fcitx5-unikey
+      fcitx5-gtk
+    ];
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
+  # --- 4. MÔI TRƯỜNG ĐỒ HỌA (i3 Window Manager) ---
+  services.xserver.enable = true;
+  services.xserver.windowManager.i3.enable = true; # Trình quản lý cửa sổ i3
+  services.xserver.displayManager.lightdm = {
+    enable = true;
+    background = pkgs.runCommand "wallpaper.png" {} ''
+      cp ${../../home-manager/modules/i3/wallpaper.png} $out
+    '';
+    greeters.gtk = {
+      enable = true;
+      theme = {
+        name = "Catppuccin-Mocha-Standard-Blue-Dark";
+        package = pkgs.catppuccin-gtk;
+      };
+      iconTheme = {
+        name = "Papirus-Dark";
+        package = pkgs.papirus-icon-theme;
+      };
+      cursorTheme = {
+        name = "Nordzy-cursors";
+        package = pkgs.nordzy-cursor-theme;
+        size = 24;
+      };
+      clock-format = "%H:%M";
+      indicators = [
+        "~host"
+        "~spacer"
+        "~clock"
+        "~session"
+        "~power"
+      ];
+    };
+  };
+  # --- 5. SOUND ---
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -66,28 +81,36 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+  # Cài đặt các gói cần thiết cho i3
+  services.xserver.windowManager.i3.package = pkgs.i3-gaps; # Dùng i3-gaps cho đẹp
+  services.xserver.windowManager.i3.extraPackages = with pkgs; [
+    i3status # Thanh trạng thái
+    i3lock # Khóa màn hình
+    dmenu # Trình chạy ứng dụng cơ bản
+  ];
 
+  # --- 5. TẠO NGƯỜI DÙNG ---
   users.users.quang = {
     isNormalUser = true;
-    description = "quang";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
+    description = "Quang";
+    extraGroups = ["networkmanager" "wheel"]; # "wheel" cho phép dùng lệnh sudo
+    shell = "/home/quang/.nix-profile/bin/zsh";
   };
-
+  # --- 6. CÁC GÓI PHẦN MỀM CÀI ĐẶT TRÊN TOÀN HỆ THỐNG ---
   environment.systemPackages = with pkgs; [
-	  vim
-	  home-manager
-	  catppuccin-sddm
-	  ];
-  system.stateVersion = "24.11"; # Did you read the comment?
-	nix.settings = {
-		experimental-features = [ "flakes"  "nix-command"];
-		substituters = ["https://hyprland.cachix.org"];
-		trusted-substituters = ["https://hyprland.cachix.org"];
-		trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-	};
-	programs.hyprland.enable = true;
+    home-manager
+    vim
+  ];
 
+  # --- 8. CÁC DỊCH VỤ KHÁC ---
+  services.openssh.enable = true; # Bật SSH để có thể truy cập từ xa
+  programs.dconf.enable = true;
+  # Cho phép cài đặt các phần mềm không tự do (non-free) như Discord, Steam...
+  nixpkgs.config.allowUnfree = true;
+
+  nix.settings = {
+    experimental-features = ["flakes" "nix-command"];
+  };
+  # Dòng này là bắt buộc. Hãy giữ nguyên phiên bản NixOS bạn đang cài.
+  system.stateVersion = "25.05"; # Hoặc phiên bản tương ứng
 }
