@@ -1,4 +1,4 @@
-{
+{user, ...}:{
   programs.zsh = {
     enable = true;
     # enableCompletions = true;
@@ -27,8 +27,8 @@
       ];
     };
     shellAliases = {
-      home-rebuild-vm = "home-manager switch --flake ./#quang@nixos-vm -b backup";
-      home-rebuild = "home-manager switch --flake ./#quang@nixos -b backup";
+      home-rebuild-vm = "home-manager switch --flake ./#${user}@nixos-vm";
+      home-rebuild = "home-manager switch --flake ./#${user}@nixos ";
       nixos-rebuild = "sudo nixos-rebuild switch --flake ./#nixos";
       nixos-rebuild-vm = "sudo nixos-rebuild switch --flake ./#nixos-vm";
       y = "yazi";
