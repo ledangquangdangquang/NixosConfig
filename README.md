@@ -50,5 +50,5 @@
 | `F12`| unmute volume|
 
 > [!NOTE]
-> See all keyshortcuts in `~/NixosConfig/home-manager/modules/i3/config` 
-> See all keyshortcuts **tmux** in `~/NixosConfig/home-manager/modules/tmux.nix`
+> * See all keyshortcuts in `~/NixosConfig/home-manager/modules/i3/config` 
+> * See all keyshortcuts **tmux** in `~/NixosConfig/home-manager/modules/tmux.nix`
