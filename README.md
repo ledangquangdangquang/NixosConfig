@@ -8,7 +8,6 @@
 
 </div>
 
----
 ## SHOWCASE
 ![zathura](./assets/zathura.png) 
 ![btop yazi and neofetch](./assets/btop-yazi-neofetch.png) 
