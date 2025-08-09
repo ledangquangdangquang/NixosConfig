@@ -17,7 +17,7 @@
     ```
     cp /etc/nixos/hardware-configuration.nix ~/NixosConfig/hosts/nixos/hardware-configuration.nix
     ```
-    if your host is **virtual machine**
+    If your host is **virtual machine**
     ```
     cp /etc/nixos/hardware-configuration.nix ~/NixosConfig/hosts/nixos-vm/hardware-configuration.nix
     ```
@@ -25,7 +25,7 @@
     ```
     sudo nixos-rebuild switch --flake ./#nixos 
     ```
-    if your host is **virtual machine**
+    If your host is **virtual machine**
     ```
     sudo nixos-rebuild switch --flake ./#nixos-vm
     ```
@@ -33,7 +33,7 @@
     ```
     home-manager switch --flake ./#quang@nixos
     ```
-    if your host is **virtual machine**
+    If your host is **virtual machine**
     ```
     home-manager switch --flake ./#quang@nixos-vm
     ```
