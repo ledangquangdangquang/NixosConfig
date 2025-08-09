@@ -29,15 +29,15 @@
       size = 11;
     };
     cursorTheme = {
-      name = "Catppuccin-Mocha-Mauve-Cursors";
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
       size = 24;
-      package = pkgs.catppuccin-cursors.mochaDark;
     };
   };
 
   home.pointerCursor = {
-    name = "Catppuccin-Mocha-Dark-Cursors";
-    package = pkgs.catppuccin-cursors.mochaDark;
-    size = 16;
+    name = "Bibata-Modern-Ice"; 
+    package = pkgs.bibata-cursors;
+    size = 24;
   };
 }
