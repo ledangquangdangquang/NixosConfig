@@ -5,6 +5,7 @@
     ueberzugpp # Image review yazi
     pavucontrol
     neofetch
+    unzip
     python314
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono

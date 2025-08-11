@@ -24,5 +24,6 @@
     ./firefox
     ./polybar
     ./i3
+    ./neofetch
   ];
 }
