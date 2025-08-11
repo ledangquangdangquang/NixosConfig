@@ -2,6 +2,7 @@
   imports = [
     # --- File ---
     ./alacritty.nix
+    ./autorandr.nix
     ./bluetooth.nix
     ./btop.nix
     ./git.nix

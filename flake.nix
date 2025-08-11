@@ -27,12 +27,9 @@
   outputs = {
     self,
     nixpkgs,
-    catppuccin,
     home-manager,
-    firefox-addons,
     ...
   } @ inputs:
-  # outputs = inputs:
   let
     system = "x86_64-linux";
     homeStateVersion = "25.05";
@@ -40,7 +37,7 @@
 
     hostMain = {
       hostname = "nixos";
-      stateVersion = "24.11";
+      stateVersion = "25.05";
     };
     hostVM = {
       hostname = "nixos-vm";
@@ -50,13 +47,13 @@
     nixosConfigurations = {
       "${hostMain.hostname}" = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs user hostMain;};
         modules = [./hosts/nixos/configuration.nix];
       };
 
       "${hostVM.hostname}" = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs user hostVM;};
         modules = [./hosts/nixos-vm/configuration.nix];
       };
     };

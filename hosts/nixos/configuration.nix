@@ -1,5 +1,6 @@
 {
   user,
+  hostMain,
   config,
   pkgs,
   ...
@@ -13,7 +14,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # --- 2. MẠNG ---
-  networking.hostName = "nixos"; # Tên máy tính của bạn
+  networking.hostName = "${hostMain.hostname}"; # Tên máy tính của bạn
+  # networking.hostName = "nixos"; 
   networking.networkmanager.enable = true; # Dùng NetworkManager để quản lý WiFi, Ethernet dễ dàng.
   hardware.bluetooth.enable = true;
   # --- 3. THỜI GIAN VÀ NGÔN NGỮ ---
@@ -91,11 +93,11 @@
   ];
 
   # --- 5. TẠO NGƯỜI DÙNG ---
-  users.users.quang = {
+  users.users.${user}= {
     isNormalUser = true;
     description = "Quang";
     extraGroups = ["networkmanager" "wheel"]; # "wheel" cho phép dùng lệnh sudo
-    shell = "/home/quang/.nix-profile/bin/zsh";
+    shell = "/home/${user}/.nix-profile/bin/zsh";
   };
   # --- 6. CÁC GÓI PHẦN MỀM CÀI ĐẶT TRÊN TOÀN HỆ THỐNG ---
   environment.systemPackages = with pkgs; [
@@ -106,12 +108,12 @@
   # --- 8. CÁC DỊCH VỤ KHÁC ---
   services.openssh.enable = true; # Bật SSH để có thể truy cập từ xa
   programs.dconf.enable = true;
-  # Cho phép cài đặt các phần mềm không tự do (non-free) như Discord, Steam...
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
     experimental-features = ["flakes" "nix-command"];
   };
-  # Dòng này là bắt buộc. Hãy giữ nguyên phiên bản NixOS bạn đang cài.
-  system.stateVersion = "25.05"; # Hoặc phiên bản tương ứng
+
+  system.stateVersion = "${hostMain.stateVersion}";# Hoặc phiên bản tương ứng
+  # system.stateVersion = "25.05"; # Hoặc phiên bản tương ứng
 }

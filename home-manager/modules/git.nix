@@ -21,5 +21,8 @@
 	};
 	# ssh-keygen -t ed25519 -C "quang.ld224113@sis.hust.edu.vn"
 	# cat ~/.ssh/id_ed25519.pub
+  # git remote -v
+  # git remote set-url origin git@github.com:ledangquangdangquang/NixosConfig.git
+
 	services.ssh-agent.enable = true;
 }

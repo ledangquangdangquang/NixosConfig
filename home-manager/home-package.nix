@@ -2,6 +2,7 @@
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     htop
+    ueberzugpp # Image review yazi
     pavucontrol
     neofetch
     python314
@@ -27,6 +28,7 @@
     xfce.tumbler
     # --- Screenshot ---
     gnome-screenshot
+    jellyfin-ffmpeg
     # --- Lsp ---
     nixd
     alejandra
