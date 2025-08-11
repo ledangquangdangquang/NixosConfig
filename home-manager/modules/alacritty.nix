@@ -11,7 +11,7 @@
           family = "FiraCode Nerd Font Mono";
           style = "Medium";
         };
-        size = 16;
+        size = 10;
       };
     };
   };

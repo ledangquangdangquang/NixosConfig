@@ -2,6 +2,7 @@
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     htop
+    pavucontrol
     neofetch
     python314
     nerd-fonts.fira-code

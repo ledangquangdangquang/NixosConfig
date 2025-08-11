@@ -1,4 +1,5 @@
 {
+  user,
   config,
   pkgs,
   ...
@@ -12,9 +13,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # --- 2. MẠNG ---
-  networking.hostName = "nixos-vm"; # Tên máy tính của bạn
+  networking.hostName = "nixos"; # Tên máy tính của bạn
   networking.networkmanager.enable = true; # Dùng NetworkManager để quản lý WiFi, Ethernet dễ dàng.
-
+  hardware.bluetooth.enable = true;
   # --- 3. THỜI GIAN VÀ NGÔN NGỮ ---
   time.timeZone = "Asia/Ho_Chi_Minh";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -58,8 +59,8 @@
         package = pkgs.papirus-icon-theme;
       };
       cursorTheme = {
-        name = "Nordzy-cursors";
-        package = pkgs.nordzy-cursor-theme;
+        name = "Bibata-Modern-Ice";
+        package = pkgs.bibata-cursors;
         size = 24;
       };
       clock-format = "%H:%M";
