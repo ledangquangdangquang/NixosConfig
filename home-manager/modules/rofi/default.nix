@@ -1,13 +1,10 @@
-{
-  pkgs,
-  catppuccin,
-  inputs,
-  ...
-}: {
-  catppuccin.rofi = {
-    enable = true;
-    flavor = "mocha";
-  };
+{ pkgs, catppuccin, inputs, config, ... }: let
+  themePath = "${config.home.homeDirectory}/.config/rofi/tokyonight.rasi";
+in {
+  # catppuccin.rofi = {
+  #   enable = true;
+  #   flavor = "mocha";
+  # };
 
   programs.rofi = {
     enable = true;
@@ -27,7 +24,13 @@
       sidebar-mode = true;
       border-radius = 10;
     };
+
+    theme = themePath;
   };
 
-  home.packages = [pkgs.bemoji];
+  # Copy theme file vào đúng chỗ
+  home.file.".config/rofi/catppuccin.rasi".source = ./catppuccin.rasi;
+  # home.file.".config/rofi/tokyonight.rasi".source = ./tokyonight.rasi;
+
+  home.packages = [ pkgs.bemoji ];
 }

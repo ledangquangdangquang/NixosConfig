@@ -17,11 +17,11 @@
     ./fzf.nix
     ./gtk.nix
     ./spicetify.nix
-    ./rofi.nix
     ./mpc.nix
     ./picom.nix # De bo goc nhung may ao thi khong
 
     # --- Folder ---
+    ./rofi
     ./firefox
     ./polybar
     ./i3
