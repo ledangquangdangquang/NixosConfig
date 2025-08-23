@@ -23,14 +23,17 @@ in {
       display-drun = "   Apps ";
       sidebar-mode = true;
       border-radius = 10;
+      kb-remove-to-eol = "";
+      kb-accept-entry= "Control+m,Return,KP_Enter";
+      kb-row-down = "Control+j,Down";
+      kb-row-up = "Control+k,Up";
     };
 
     theme = themePath;
   };
 
   # Copy theme file vào đúng chỗ
-  home.file.".config/rofi/catppuccin.rasi".source = ./catppuccin.rasi;
-  # home.file.".config/rofi/tokyonight.rasi".source = ./tokyonight.rasi;
+  home.file.".config/rofi/tokyonight.rasi".source = ./tokyonight.rasi;
 
   home.packages = [ pkgs.bemoji ];
 }

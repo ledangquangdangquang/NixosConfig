@@ -34,5 +34,9 @@
     nixd
     alejandra
     libreoffice
+    # --- Notification volume ---
+    pamixer # control volume cli
+    libnotify # send Notification
+    dunst # trinh thong bao
   ];
 }
