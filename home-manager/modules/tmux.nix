@@ -38,17 +38,23 @@ catppuccin.tmux = {
       bind -n M-Right resize-pane -R 5
       bind -n M-Up    resize-pane -U 3
       bind -n M-Down  resize-pane -D 3
+      bind -n M-m     resize-pane -Z
 
       # Splits
       bind -n M-s split-window -v
       bind -n M-v split-window -h
 
       # Open custom windows
-      # bind -n M-o "nvim -c 'Telescope find_files'"
-
       bind -n M-o send-keys "nvim -c 'Telescope find_files'" C-m
-      bind -n M-O send-keys "fuzzyvim" C-m
+      bind -n M-O send-keys "clear && fuzzyvim" C-m
       bind -n M-n new-window
+
+      # Copy vim  movements
+      set-window-option -g mode-keys vi
+      bind-key -T root C-n copy-mode
+      bind -T copy-mode-vi v send -X begin-selection
+      bind -T copy-mode-vi y send -X copy-pipe-and-cancel "xclip -selection clipboard"
+
     '';
 
     plugins = with pkgs; [

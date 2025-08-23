@@ -18,7 +18,7 @@
       icon-theme = "Numix-Circle";
       font = "JetBrains Mono Regular 13";
       show-icons = true;
-      terminal = "wezterm";
+      terminal = "kitty";
       drun-display-format = "{icon} {name}";
       location = 0;
       disable-history = false;
@@ -26,13 +26,6 @@
       display-drun = "   Apps ";
       sidebar-mode = true;
       border-radius = 10;
-      # modi = "drun";
-      # show-icons = true;
-      # drun-display-format = "{icon} {name}";
-      # disable-history = false;
-      # hide-scrollbar = true;
-      # display-drun = "   Apps ";
-      # sidebar-mode = true;
     };
   };
 
