@@ -2,8 +2,9 @@
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     htop
-    ueberzugpp # Image review yazi
+    # ueberzugpp # Image review yazi
     pavucontrol
+    wget
     neofetch
     unzip
     python314

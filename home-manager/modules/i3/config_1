@@ -40,10 +40,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Start poly bar
 exec --no-startup-id polybar 
 # Start wallpaper
-exec --no-startup-id feh --no-fehbg --bg-fill ~/NixosConfig/home-manager/modules/i3/wallpaper.png ~/NixosConfig/home-manager/modules/i3/wallpaper.png
-# Start multi display
-exec --no-startup-id xrandr --output eDP-1 --primary --mode 1920x1080 --rate 60 --output DP-1 --mode 1920x1080 --rate 60 --right-of eDP-1
-exec --no-startup-id feh --no-fehbg --bg-fill ~/NixosConfig/home-manager/modules/i3/wallpaper.png ~/NixosConfig/home-manager/modules/i3/wallpaper.png
+# exec --no-startup-id feh --bg-scale ~/NixosConfig/home-manager/modules/i3/wallpaper.png
+exec --no-startup-id feh --bg-fill ~/NixosConfig/home-manager/modules/i3/wallpaper.png
 # NetworkManager tray icon
 exec --no-startup-id nm-applet
 # Screenshot
@@ -128,12 +126,8 @@ bindsym $mod+space focus mode_toggle
 # Focus parent
 bindsym $mod+a focus parent
 
-# Đặt tên cho màn hình
-# Màn chính (ngoai)
-set $fm DP-1     
-# Màn phụ (laptop)
-set $sm eDP-1      
-
+set $fm eDP-1
+set $sm DP-1
 # Workspaces
 set $ws1 "1"
 set $ws2 "2"
@@ -146,21 +140,8 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# Gán workspace cố định lên màn hình
-workspace $ws1 output $fm
-workspace $ws2 output $fm
-workspace $ws3 output $fm
-workspace $ws4 output $fm
-workspace $ws5 output $fm
-
-workspace $ws6 output $sm
-workspace $ws7 output $sm
-workspace $ws8 output $sm
-workspace $ws9 output $sm
-workspace $ws10 output $sm
-
-# Chuyển đến workspace
-bindsym $mod+1 workspace number $ws1
+# Switch to workspace
+bindsym $mod+1 workspace number $ws1 output $fm
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
@@ -171,7 +152,7 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-# Di chuyển cửa sổ đến workspace
+# Move container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -182,6 +163,7 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
 # Reload and restart
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart

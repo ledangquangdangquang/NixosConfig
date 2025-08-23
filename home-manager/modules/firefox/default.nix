@@ -5,7 +5,6 @@
   inputs,
   ...
 }: {
-
   catppuccin.firefox.enable = true;
 
   programs.firefox = {
@@ -243,6 +242,9 @@
       ];
 
       settings = {
+        "devtools.chrome.enabled" = true;
+        "devtools.debugger.remote-enabled" = true;
+        "devtools.debugger.prompt-connection" = false;
         "layout.spellcheckDefault" = 0;
         "accessibility.force_disabled" = 1;
         "app.normandy.api_url" = "";
