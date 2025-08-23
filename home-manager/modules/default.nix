@@ -2,6 +2,7 @@
   imports = [
     # --- File ---
     ./alacritty.nix
+    ./qutebrowser.nix
     ./kitty.nix
     ./autorandr.nix
     ./bluetooth.nix

@@ -278,7 +278,7 @@
         "browser.shell.checkDefaultBrowser" = false;
         "browser.startup.homepage" = "about:home";
         "browser.startup.homepage_override.mstone" = "ignore";
-        "browser.startup.page" = 3;
+        "browser.startup.page" = 1;
         "browser.tabs.inTitlebar" = 0;
         "browser.tabs.warnOnClose" = false;
         "browser.theme.dark-private-windows" = true;
