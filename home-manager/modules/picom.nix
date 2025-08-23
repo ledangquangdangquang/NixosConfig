@@ -17,7 +17,14 @@
 
       # Làm trong suốt Kitty
       opacity-rule = [
+        #  xprop | grep WM_CLASS
         "90:class_g = 'kitty'"
+        "90:class_g = 'Alacritty'"
+        "90:class_g = 'firefox'"
+        "90:class_g = 'Rofi'"
+        "90:class_g = 'Zathura'"
+        "90:class_g = 'obsidian'"
+        "90:class_g = 'Thunar'"
       ];
 
       # Thêm hiệu ứng blur cho cửa sổ

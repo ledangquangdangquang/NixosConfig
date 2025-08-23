@@ -2,7 +2,6 @@
   imports = [
     # --- File ---
     ./alacritty.nix
-    ./qutebrowser.nix
     ./kitty.nix
     ./autorandr.nix
     ./bluetooth.nix
@@ -20,6 +19,7 @@
     ./spicetify.nix
     ./mpc.nix
     ./picom.nix # De bo goc nhung may ao thi khong
+    ./rmpc.nix
 
     # --- Folder ---
     ./rofi

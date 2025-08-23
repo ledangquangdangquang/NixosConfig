@@ -2,6 +2,7 @@
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     htop
+    obsidian
     pavucontrol
     wget
     neofetch
@@ -19,7 +20,7 @@
     # --- Wallpaper ---
     feh
     # --- Music ---
-    mpc
+    mpv
     # --- File manager ---
     xfce.xfce4-panel # XFCE Panel
     xfce.thunar
