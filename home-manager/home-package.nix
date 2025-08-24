@@ -21,6 +21,8 @@
     feh
     # --- Music ---
     mpv
+    mpd
+    mpc
     # --- File manager ---
     xfce.xfce4-panel # XFCE Panel
     xfce.thunar
@@ -39,5 +41,6 @@
     pamixer # control volume cli
     libnotify # send Notification
     dunst # trinh thong bao
+    discord
   ];
 }

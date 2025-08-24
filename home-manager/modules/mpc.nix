@@ -1,9 +1,11 @@
-{ pkgs, ... }:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   services.mpd = {
     enable = true;
-    musicDirectory = "${builtins.getEnv "HOME"}/Music";
+    musicDirectory = "${config.home.homeDirectory}/Music";
     network.listenAddress = "127.0.0.1";
     extraConfig = ''
       audio_output {
@@ -14,5 +16,4 @@
   };
 
   # programs.mpc.enable = true;
-
 }
