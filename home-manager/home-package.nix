@@ -37,6 +37,7 @@
     # --- Lsp ---
     nixd
     alejandra
+    prettier
     libreoffice
     # --- Notification volume ---
     pamixer # control volume cli

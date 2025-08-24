@@ -120,6 +120,7 @@
             lua = { "stylua" },
             javascript = { "prettier" },
             typescript = { "prettier" },
+            html = { "prettier" },  
             python = { "black" },
             },
           })

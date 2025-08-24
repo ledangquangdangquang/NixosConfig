@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.vscode.enable = true;
   programs.vscode.profiles.default = {
     extensions = with pkgs.vscode-extensions; [
@@ -10,7 +10,9 @@
       catppuccin.catppuccin-vsc
     ];
     userSettings = {
-      "editor.fontSize" = 14;
+      "workbench.colorTheme" = "Catppuccin Mocha";
+      "workbench.iconTheme" = "catppuccin-mocha";
+      "editor.fontSize" = 16;
       "editor.tabSize" = 2;
       "files.autoSave" = "onFocusChange";
     };
