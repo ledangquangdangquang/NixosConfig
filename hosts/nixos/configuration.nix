@@ -15,7 +15,7 @@
 
   # --- 2. MẠNG ---
   networking.hostName = "${hostMain.hostname}"; # Tên máy tính của bạn
-  # networking.hostName = "nixos"; 
+  # networking.hostName = "nixos";
   networking.networkmanager.enable = true; # Dùng NetworkManager để quản lý WiFi, Ethernet dễ dàng.
   hardware.bluetooth.enable = true;
   # --- 3. THỜI GIAN VÀ NGÔN NGỮ ---
@@ -93,7 +93,7 @@
   ];
 
   # --- 5. TẠO NGƯỜI DÙNG ---
-  users.users.${user}= {
+  users.users.${user} = {
     isNormalUser = true;
     description = "Quang";
     extraGroups = ["networkmanager" "wheel"]; # "wheel" cho phép dùng lệnh sudo
@@ -104,7 +104,10 @@
     home-manager
     vim
   ];
-
+  # --- 6.5. Virtual machine ---
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["quang"];
+  virtualisation.virtualbox.host.enableExtensionPack = true;
   # --- 8. CÁC DỊCH VỤ KHÁC ---
   services.openssh.enable = true; # Bật SSH để có thể truy cập từ xa
   programs.dconf.enable = true;
@@ -114,6 +117,6 @@
     experimental-features = ["flakes" "nix-command"];
   };
 
-  system.stateVersion = "${hostMain.stateVersion}";# Hoặc phiên bản tương ứng
+  system.stateVersion = "${hostMain.stateVersion}"; # Hoặc phiên bản tương ứng
   # system.stateVersion = "25.05"; # Hoặc phiên bản tương ứng
 }
