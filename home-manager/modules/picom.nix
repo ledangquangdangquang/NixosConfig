@@ -25,6 +25,7 @@
         "90:class_g = 'Zathura'"
         "90:class_g = 'obsidian'"
         "90:class_g = 'Thunar'"
+        "90:class_g = 'Code'"
       ];
 
       # Thêm hiệu ứng blur cho cửa sổ
