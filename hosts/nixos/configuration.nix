@@ -91,12 +91,12 @@
     i3lock # Khóa màn hình
     dmenu # Trình chạy ứng dụng cơ bản
   ];
-
+  services.udisks2.enable = true;
   # --- 5. TẠO NGƯỜI DÙNG ---
   users.users.${user} = {
     isNormalUser = true;
     description = "Quang";
-    extraGroups = ["networkmanager" "wheel"]; # "wheel" cho phép dùng lệnh sudo
+    extraGroups = ["wheel" "networkmanager" "plugdev" "storage"];
     shell = "/home/${user}/.nix-profile/bin/zsh";
   };
   # --- 6. CÁC GÓI PHẦN MỀM CÀI ĐẶT TRÊN TOÀN HỆ THỐNG ---
