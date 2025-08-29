@@ -27,8 +27,7 @@ bindsym $mod+p exec --no-startup-id bash ~/NixosConfig/home-manager/modules/rofi
 # NetworkManager tray icon
 exec --no-startup-id nm-applet
 # Screenshot
-bindsym F8 exec gnome-screenshot -f ~/Pictures/Screenshots/screenshot.png
-
+bindsym F8 exec gnome-screenshot -f ~/Pictures/screenshot.png
 # PulseAudio volume controls
 # Refresh i3status
 set $refresh_i3status killall -SIGUSR1 i3status

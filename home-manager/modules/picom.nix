@@ -1,23 +1,22 @@
 {
   services.picom = {
     enable = true;
-    backend = "glx"; # dùng GLX để hỗ trợ blur; nếu máy bạn không hỗ trợ thì quay lại "xrender"
+    backend = "glx";
     vSync = true;
     shadow = true;
 
     settings = {
       corner-radius = 15;
 
-      # Bo góc chỉ áp dụng cho cửa sổ không nằm trong danh sách này
+      # Bo góc cho cửa sổ
       rounded-corners-exclude = [
         "class_g = 'i3-frame'"
         "window_type = 'dock'"
         "window_type = 'desktop'"
       ];
 
-      # Làm trong suốt Kitty
+      # Trong suốt
       opacity-rule = [
-        #  xprop | grep WM_CLASS
         "90:class_g = 'kitty'"
         "90:class_g = 'Alacritty'"
         "90:class_g = 'firefox'"
@@ -28,14 +27,13 @@
         "90:class_g = 'Code'"
       ];
 
-      # Thêm hiệu ứng blur cho cửa sổ
+      # Blur
       blur = {
         method = "dual_kawase";
         strength = 7;
         background = false;
       };
 
-      # Cho phép blur trên một số loại cửa sổ
       wintypes = {
         normal = { blur = true; };
         dialog = { blur = true; };
@@ -44,10 +42,16 @@
         dropdown_menu = { blur = true; };
       };
 
-      # Bo góc chỉ cho Kitty (tùy chọn nếu muốn áp riêng)
+      # Fade (chuyển cảnh mượt)
+      fading = true;
+      fade-in-step = 0.04;
+      fade-out-step = 0.04;
+      fade-delta = 5;
+      fade-exclude = [ ]; # Nếu muốn loại trừ cửa sổ không fade
+
+      # (Tùy chọn) bo góc riêng Kitty
       round-borders = 1;
       round-borders-rule = [ "class_g = 'kitty'" ];
     };
   };
 }
-
