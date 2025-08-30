@@ -14,6 +14,7 @@
     tree
     bat
     xclip
+    deno
     polybarFull
     # --- Vietnamese tool ---
     fcitx5-unikey

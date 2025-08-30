@@ -17,38 +17,38 @@ Before install enter the **tty** (`Ctrl+Shift+F2`) to begin.
 > [!NOTE]
 > * Nixos version 25.05
 > * Before install add features `flake` and `nix-command` in your `/etc/nixos/configuration.nix`
->   ```
+>   ```bash
 >   nix.settings.experimental-features = ["flake" "nix-command"];
 >   ```
 * ***Clone my repo***
-    ```
+    ```bash
     nix-shell -p git
     cd ~
     git clone https://github.com/ledangquangdangquang/NixosConfig.git
     cd NixosConfig
     ```
 * ***Replace `hardware-configuration.nix`***
-    ```
+    ```bash
     cp /etc/nixos/hardware-configuration.nix ~/NixosConfig/hosts/nixos/hardware-configuration.nix
     ```
     If your host is **virtual machine**
-    ```
+    ```bash
     cp /etc/nixos/hardware-configuration.nix ~/NixosConfig/hosts/nixos-vm/hardware-configuration.nix
     ```
 * ***Install flake***
-    ```
+    ```bash
     sudo nixos-rebuild switch --flake ./#nixos 
     ```
     If your host is **virtual machine**
-    ```
+    ```bash
     sudo nixos-rebuild switch --flake ./#nixos-vm
     ```
 * ***Install home-manager***
-    ```
+    ```bash
     home-manager switch --flake ./#quang@nixos
     ```
     If your host is **virtual machine**
-    ```
+    ```bash
     home-manager switch --flake ./#quang@nixos-vm
     ```
 
