@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 choice=$(printf "Extend\nMirror" | rofi -dmenu -p "Display Mode")
 
 if [ "$choice" = "Extend" ]; then

@@ -23,8 +23,8 @@ exec --no-startup-id feh --no-fehbg --bg-fill ~/NixosConfig/home-manager/modules
 exec --no-startup-id xrandr --output $sm --primary --mode 1920x1080 --rate 60 --output $fm --mode 1920x1080 --rate 60 --right-of $sm
 exec --no-startup-id feh --no-fehbg --bg-fill ~/NixosConfig/home-manager/modules/i3/wallpaper.png ~/NixosConfig/home-manager/modules/i3/wallpaper.png
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/scripts/monitor-mode.sh
-# bindsym $mod+p exec --no-startup-id bash ~/NixosConfig/home-manager/modules/rofi/scripts/monitor-mode.sh
-#  xrandr --output $fm --mode 1920x1080 --same-as $sm
+# Wifi connect menu
+bindsym $mod+Shift+w exec --no-startup-id ~/.config/rofi/scripts/wifi_rofi.sh
 # NetworkManager tray icon
 exec --no-startup-id nm-applet
 # Screenshot
