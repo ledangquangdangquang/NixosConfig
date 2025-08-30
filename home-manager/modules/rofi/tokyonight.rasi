@@ -8,7 +8,7 @@
  */
 
 configuration {
-  font: "Cascadia Code 10";
+  font: "Fira Code 16";
 
   drun {
     display-name: "";

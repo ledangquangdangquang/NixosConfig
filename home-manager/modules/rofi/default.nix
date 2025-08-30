@@ -6,6 +6,14 @@ in {
   #   flavor = "mocha";
   # };
 
+  home.file.".config/rofi/scripts/wifi_rofi.sh" = {
+    source = ./scripts/wifi_rofi.sh;
+    executable = true;  # Cấp quyền chạy cho script
+  };
+  home.file.".config/rofi/scripts/monitor-mode.sh" = {
+    source = ./scripts/monitor-mode.sh;
+    executable = true;  # Cấp quyền chạy cho script
+  };
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
