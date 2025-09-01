@@ -2,6 +2,7 @@
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     htop
+    nodejs_24
     virtualbox
     obsidian
     pavucontrol
@@ -43,7 +44,6 @@
     # --- Notification volume ---
     pamixer # control volume cli
     libnotify # send Notification
-    # dunst # trinh thong bao
     # --- Messager ---
     discord
     telegram-desktop

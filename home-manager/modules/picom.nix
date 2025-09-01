@@ -17,7 +17,7 @@
 
       # Trong suốt
       opacity-rule = [
-        "90:class_g = 'kitty'"
+        "70:class_g = 'kitty'"
         "90:class_g = 'Alacritty'"
         "90:class_g = 'firefox'"
         "90:class_g = 'Rofi'"
