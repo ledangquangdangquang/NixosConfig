@@ -16,9 +16,11 @@
       ];
 
       # Trong suốt
+      # xprop
       opacity-rule = [
         "70:class_g = 'kitty'"
         "90:class_g = 'Alacritty'"
+        "40:class_g = 'Polybar'"
         "90:class_g = 'firefox'"
         "90:class_g = 'Rofi'"
         "90:class_g = 'Zathura'"

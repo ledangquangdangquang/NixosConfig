@@ -12,7 +12,7 @@ catppuccin.tmux = {
     terminal = "screen-256color";
 
     extraConfig = ''
-      set -as terminal-features ",alacritty*:rgb"
+      set -as terminal-features ",kitty*:rgb"
       bind -n M-r source-file ~/.config/tmux/tmux.conf \; display "reloaded!"
 
 
@@ -55,6 +55,14 @@ catppuccin.tmux = {
       bind -T copy-mode-vi v send -X begin-selection
       bind -T copy-mode-vi y send -X copy-pipe-and-cancel "xclip -selection clipboard"
 
+
+      set -g status-interval 300 
+      set -g status-justify centre # center align window list
+      set -g status-left-length 200
+      set -g status-right-length 140
+      set -g status-left '#[fg=white]#(curl -s 'wttr.in?format=3')#[default]'
+
+      set -g status-right '#[fg=white,bg=default]%a%l:%M %p#[default] #[fg=blue]%d/%m/%y'
     '';
 
     plugins = with pkgs; [
