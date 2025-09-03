@@ -47,5 +47,9 @@
     # --- Messager ---
     discord
     telegram-desktop
+    # --- Lock ---
+    scrot
+    imagemagick
+    i3lock-fancy-rapid
   ];
 }

@@ -50,6 +50,11 @@
       };
     };
     profiles.default = {
+      search = {
+        force = true;
+        default = "ddg"; # DuckDuckGo
+        privateDefault = "ddg";
+      };
       extensions.force = true; # override extension
       bookmarks.force = true; # override bookmark
       userChrome = ./FirefoxCss/chrome/userChrome.css;
@@ -80,12 +85,12 @@
         "browser.newtabpage.activity-stream.showSponsored" = false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
         "browser.newtabpage.activity-stream.telemetry" = false;
-        "browser.newtabpage.enabled" = false;
+        "browser.newtabpage.enabled" = true;
         "browser.ping-centre.telemetry" = false;
         "browser.privatebrowsing.forceMediaMemoryCache" = true;
         "browser.safebrowsing.downloads.remote.enabled" = false;
         "browser.safebrowsing.downloads.remote.url" = "";
-        "browser.search.suggest.enabled" = false;
+        "browser.search.suggest.enabled" = true;
         "browser.sessionstore.warnOnQuit" = true;
         "browser.shell.checkDefaultBrowser" = false;
         "browser.startup.homepage" = "about:home";

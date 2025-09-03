@@ -29,17 +29,21 @@ bindsym $mod+Shift+w exec --no-startup-id ~/.config/rofi/scripts/wifi_rofi.sh
 exec --no-startup-id nm-applet
 # Screenshot
 bindsym F8 exec gnome-screenshot -f ~/Pictures/screenshot.png
-# PulseAudio volume controls
-# Refresh i3status
 set $refresh_i3status killall -SIGUSR1 i3status
-
+# Brightness
+# xrandr --output eDP-1 
+# Giam do sang 
+bindsym F6 exec --no-startup-id xrandr --output $fm --brightness 0.7 && xrandr --output $sm --brightness 0.7 
+# Tang do sang 
+bindsym F7 exec --no-startup-id xrandr --output $fm --brightness 1 && xrandr --output $sm --brightness 1
+# Anh sang vang
+bindsym F11 exec --no-startup-id xrandr --output $fm --gamma 1:0.8:0.6 && xrandr --output $sm --gamma 1:0.8:0.6
+bindsym F12 exec --no-startup-id xrandr --output $fm --gamma 1:1:1 && xrandr --output $sm --gamma 1:1:1
 # Tăng âm lượng
-bindsym F10 exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%+ && $refresh_i3status
+bindsym F3 exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%+ && $refresh_i3status
 # Giảm âm lượng
-bindsym F9 exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%- && $refresh_i3status
-bindsym F12 exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ 0 && $refresh_i3status
-bindsym F11 exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ 1 && $refresh_i3status
-
+bindsym F2 exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%- && $refresh_i3status
+bindsym F1 exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 # Tăng âm lượng
 bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%+ && $refresh_i3status
 # Giảm âm lượng

@@ -11,6 +11,7 @@ catppuccin.tmux = {
     keyMode = "vi";
     terminal = "screen-256color";
 
+    # Ctrl + R: history
     extraConfig = ''
       set -as terminal-features ",kitty*:rgb"
       bind -n M-r source-file ~/.config/tmux/tmux.conf \; display "reloaded!"
@@ -48,7 +49,13 @@ catppuccin.tmux = {
       bind -n M-o send-keys "nvim -c 'Telescope find_files'" C-m
       bind -n M-O send-keys "clear && fuzzyvim" C-m
       bind -n M-n new-window
+### Notes & Todos 
 
+# Ghi chú ý tưởng (tạo file mới theo giờ)
+bind -r e split-window -h "nvim ~/notes/notes_$(date +'%y%m%d%H').md"
+
+# Todo list chung (luôn mở file todo.md)
+bind -r o split-window -h "nvim ~/notes/todo.md"
       # Copy vim  movements
       set-window-option -g mode-keys vi
       bind-key -T root C-n copy-mode
@@ -61,8 +68,8 @@ catppuccin.tmux = {
       set -g status-left-length 200
       set -g status-right-length 140
       set -g status-left '#[fg=white]#(curl -s 'wttr.in?format=3')#[default]'
-
-      set -g status-right '#[fg=white,bg=default]%a%l:%M %p#[default] #[fg=blue]%d/%m/%y'
+      set -g status-right "#(head -n 1 ~/notes/todo.md 2>/dev/null || echo 'No TODO') #[fg=white,bg=default]%a %l:%M %p#[default] #[fg=blue]%d/%m/%y"
+      # set -g status-right '#[fg=white,bg=default]%a%l:%M %p#[default] #[fg=blue]%d/%m/%y'
     '';
 
     plugins = with pkgs; [
