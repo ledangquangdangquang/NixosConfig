@@ -2,6 +2,7 @@
   imports = [
     # --- File ---
     ./alacritty.nix
+    ./sway.nix
     ./dunst.nix
     ./vscode.nix
     ./kitty.nix

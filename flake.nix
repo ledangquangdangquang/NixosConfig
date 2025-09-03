@@ -14,10 +14,6 @@
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions/master?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nix4nvchad = {
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -62,7 +58,6 @@
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
         inherit inputs homeStateVersion user;
-        firefox-addons = inputs.firefox-addons.packages.${system};
         catppuccin = inputs.catppuccin;
         nix4nvchad = inputs.nix4nvchad;
       };
@@ -73,7 +68,6 @@
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
         inherit inputs homeStateVersion user;
-        firefox-addons = inputs.firefox-addons.packages.${system};
         catppuccin = inputs.catppuccin;
         nix4nvchad = inputs.nix4nvchad;
       };
