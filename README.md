@@ -1,4 +1,4 @@
-<h1 align="center"> My NixOS' dotfiles</h1>
+<h1 align="center"> My NixOS dotfiles</h1>
 
 <div align="center">
 
