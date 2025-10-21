@@ -49,71 +49,69 @@
       
       -- Cấu hình neoscroll
       require("luxmotion").setup({
-  cursor = {
-    duration = 250,       -- Cursor animation duration (ms)
-    easing = "ease-out",  -- Cursor easing function
-    enabled = true,
-  },
-  scroll = {
-    duration = 400,       -- Scroll animation duration (ms)
-    easing = "ease-out",  -- Scroll easing function
-    enabled = true,
-  },
-  performance = {
-    enabled = false,      -- Enable performance mode
-  },
-  keymaps = {
-    cursor = true,        -- Enable cursor motion keymaps
-    scroll = true,        -- Enable scroll motion keymaps
-  },
-})
-require('peek').setup({
-  auto_load = true,         -- whether to automatically load preview when
-                            -- entering another markdown buffer
-  close_on_bdelete = true,  -- close preview window on buffer delete
+        cursor = {
+          duration = 250,       -- Cursor animation duration (ms)
+          easing = "ease-out",  -- Cursor easing function
+          enabled = true,
+        },
+        scroll = {
+          duration = 400,       -- Scroll animation duration (ms)
+          easing = "ease-out",  -- Scroll easing function
+          enabled = true,
+        },
+        performance = {
+          enabled = false,      -- Enable performance mode
+        },
+        keymaps = {
+          cursor = true,        -- Enable cursor motion keymaps
+          scroll = true,        -- Enable scroll motion keymaps
+        },
+      })
+      require('peek').setup({
+        auto_load = true,         -- whether to automatically load preview when
+                                  -- entering another markdown buffer
+        close_on_bdelete = true,  -- close preview window on buffer delete
 
-  syntax = true,            -- enable syntax highlighting, affects performance
+        syntax = true,            -- enable syntax highlighting, affects performance
 
-  theme = 'dark',           -- 'dark' or 'light'
+        theme = 'dark',           -- 'dark' or 'light'
 
-  update_on_change = true,
+        update_on_change = true,
 
-  app = 'firefox',          -- 'webview', 'browser', string or a table of strings
-                            -- explained below
+        app = 'firefox',          -- 'webview', 'browser', string or a table of strings
+                                  -- explained below
 
-  filetype = { 'markdown' },-- list of filetypes to recognize as markdown
+        filetype = { 'markdown' },-- list of filetypes to recognize as markdown
 
-  -- relevant if update_on_change is true
-  throttle_at = 200000,     -- start throttling when file exceeds this
-                            -- amount of bytes in size
-  throttle_time = 'auto',   -- minimum amount of time in milliseconds
-                            -- that has to pass before starting new render
-})
+        -- relevant if update_on_change is true
+        throttle_at = 200000,     -- start throttling when file exceeds this
+                                  -- amount of bytes in size
+        throttle_time = 'auto',   -- minimum amount of time in milliseconds
+                                  -- that has to pass before starting new render
+      })
     '';
 
     extraPlugins = ''
       return {
-{
-    "toppair/peek.nvim",
-    event = { "VeryLazy" },
-    build = "deno task --quiet build:fast",
-    config = function()
-        require("peek").setup()
-        vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-        vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-    end,
-},        {
-          "LuxVim/nvim-luxmotion",
+        {
+          "toppair/peek.nvim",
+          event = { "VeryLazy" },
+          build = "deno task --quiet build:fast",
+          config = function()
+          require("peek").setup()
+          vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+          vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+          end,
+        },        
+        {"LuxVim/nvim-luxmotion",},
+        {
+          "m4xshen/hardtime.nvim",
+          lazy = false,
+          dependencies = { "MunifTanjim/nui.nvim" },
+          opts = {},
         },
         {
-           "m4xshen/hardtime.nvim",
-           lazy = false,
-           dependencies = { "MunifTanjim/nui.nvim" },
-           opts = {},
-        },
-        -- { "karb94/neoscroll.nvim" },
-        {
-	  "stevearc/conform.nvim",
+          "stevearc/conform.nvim",
           config = function()
           require("conform").setup({
             formatters_by_ft = {
@@ -126,6 +124,27 @@ require('peek').setup({
             },
           })
           end,
+        },
+        {
+          "sontungexpt/vietnamese.nvim",
+          dependencies = {
+            "sontungexpt/bim.nvim",
+            "nvim-web-devicons",
+          },
+          event = "InsertEnter",
+          config = function()
+            require("vietnamese").setup()
+          end,
+        },
+        {
+          "lervag/vimtex",
+          lazy = false,     -- we don't want to lazy load VimTeX
+          -- tag = "v2.15", -- uncomment to pin to a specific release
+          init = function()
+          -- VimTeX configuration goes here, e.g.
+          vim.g.vimtex_view_method = "zathura"
+          vim.g.vimtex_compiler_method = "latexmk"
+          end
         },
       }
     '';

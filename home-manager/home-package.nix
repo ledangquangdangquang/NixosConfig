@@ -2,6 +2,7 @@
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     localsend
+    texliveFull
     octaveFull
     htop
     nodejs_24
