@@ -19,6 +19,6 @@
 
 #Download a portion of the vid
 #--downloader ffmpeg --downloader-args "ffmpeg_i:-ss 00:02:00 -to 00:05:00"
-   '' 
+   ''; 
   };
 }
