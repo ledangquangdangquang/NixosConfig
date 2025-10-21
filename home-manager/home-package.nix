@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+    octaveFull
     htop
     nodejs_24
     acpi
