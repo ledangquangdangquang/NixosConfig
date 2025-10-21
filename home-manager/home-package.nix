@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     htop
     nodejs_24
+    acpi
     virtualbox
     obsidian
     pavucontrol

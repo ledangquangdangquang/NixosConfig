@@ -2,7 +2,6 @@
   imports = [
     # --- File ---
     ./alacritty.nix
-    ./sway.nix
     ./dunst.nix
     ./vscode.nix
     ./kitty.nix
@@ -21,7 +20,7 @@
     ./gtk.nix
     ./spicetify.nix
     ./mpc.nix
-    ./picom.nix # De bo goc nhung may ao thi khong
+    # ./picom.nix # De bo goc nhung may ao thi khong
     ./rmpc.nix
 
     # --- Folder ---

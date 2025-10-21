@@ -68,7 +68,9 @@ bind -r o split-window -h "nvim ~/notes/todo.md"
       set -g status-left-length 200
       set -g status-right-length 140
       set -g status-left '#[fg=white]#(curl -s 'wttr.in?format=3')#[default]'
-      set -g status-right "#(head -n 1 ~/notes/todo.md 2>/dev/null || echo 'No TODO') #[fg=white,bg=default]%a %l:%M %p#[default] #[fg=blue]%d/%m/%y"
+      # set -g status-right "#(head -n 1 ~/notes/todo.md 2>/dev/null || echo 'No TODO') #[fg=white,bg=default]%a %l:%M %p#[default] #[fg=blue]%d/%m/%y"
+
+      set -g status-right "#[fg=white,bg=default]%a %l:%M %p #[fg=blue]%d/%m/%y #[fg=green]#(echo bat: $(acpi -b | grep -oP '\\d+%' | head -1))"
       # set -g status-right '#[fg=white,bg=default]%a%l:%M %p#[default] #[fg=blue]%d/%m/%y'
     '';
 

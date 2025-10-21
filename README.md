@@ -14,7 +14,9 @@
 ![btop yazi and neofetch](./assets/btop-yazi-neofetch.png) 
 ## INSTALL
 > [!NOTE]
+> * If your username is not `quang` edit in `~/NixosConfig/flake.nix` and each script in next
 > * Nixos version 25.05
+> * Check your display `xrandr` and edit in `~/NixosConfig/home-manager/modules/i3/config`
 * ***Clone my repo***
     ```bash
     nix-shell -p git
@@ -43,7 +45,7 @@
     ```bash
     sudo nixos-rebuild switch --flake ./#nixos-vm
     ```
-* Enter the **tty** (`Ctrl+Shift+F2`) to begin.
+* Enter the **tty** (`Ctrl+Shift+F2`) to next step.
 * ***Install home-manager***
     ```bash
     home-manager switch --flake ./#quang@nixos
