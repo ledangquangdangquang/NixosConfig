@@ -9,8 +9,31 @@
       full-border = full-border;
       smart-enter = smart-enter;
       toggle-pane = toggle-pane;
+      mediainfo = mediainfo;
     };
-
+    settings = {
+      opener = {
+        pdff = [
+          {
+            run = ''
+              zathura "$@"
+            '';
+            desc = "Open with Zathura";
+            block = false;
+            orphan = true;
+            for = "unix";
+          }
+        ];
+      };
+      open = {
+        prepend_rules = [
+          {
+            name = "*.pdf";
+            use = "pdff";
+          }
+        ];
+      };
+    };
     # Gọi setup plugin trong init.lua
     initLua = ''
       require("full-border"):setup()

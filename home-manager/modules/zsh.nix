@@ -60,10 +60,10 @@
 
     shellAliases = {
       # Đảm bảo sử dụng ${user} đúng cách trong Nix string
-      home-rebuild-vm = "home-manager switch --flake ./#${user}@nixos-vm";
-      home-rebuild = "home-manager switch --flake ./#${user}@nixos";
-      nixos-rebuild = "sudo nixos-rebuild switch --flake ./#nixos";
-      nixos-rebuild-vm = "sudo nixos-rebuild switch --flake ./#nixos-vm";
+      home-rebuild-vm = "cd ~/NixosConfig && home-manager switch --flake ./#${user}@nixos-vm";
+      home-rebuild = "cd ~/NixosConfig && home-manager switch --flake ./#${user}@nixos";
+      nixos-rebuild = "cd ~/NixosConfig && sudo nixos-rebuild switch --flake ./#nixos";
+      nixos-rebuild-vm = "cd ~/NixosConfig && sudo nixos-rebuild switch --flake ./#nixos-vm";
     };
     
     history.size = 10000;
