@@ -39,7 +39,8 @@
     xfce.tumbler
     # --- Screenshot ---
     gnome-screenshot
-    jellyfin-ffmpeg
+    # jellyfin-ffmpeg
+    ffmpeg
     # --- Lsp ---
     nixd
     alejandra
