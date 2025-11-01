@@ -103,6 +103,7 @@
   environment.systemPackages = with pkgs; [
     home-manager
     vim
+    # (pkgs.octave.withPackages (p: [p.communications]))
   ];
   # --- 6.5. Virtual machine ---
   virtualisation.virtualbox.host.enable = true;

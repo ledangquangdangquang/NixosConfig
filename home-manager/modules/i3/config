@@ -17,7 +17,7 @@ exec --no-startup-id picom --experimental-backends
 # Screen locker before suspend
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Start poly bar
-exec --no-startup-id polybar 
+# exec --no-startup-id polybar 
 # Start wallpaper
 exec --no-startup-id feh --no-fehbg --bg-fill ~/NixosConfig/home-manager/modules/i3/wallpaper.png ~/NixosConfig/home-manager/modules/i3/wallpaper.png
 # Start multi display
@@ -188,9 +188,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 7
 
 gaps inner 10
 gaps outer 10
-# gaps inner 5
-# gaps outer 5

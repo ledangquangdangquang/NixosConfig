@@ -25,7 +25,7 @@
       package = pkgs.catppuccin-gtk;
     };
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "FiraCode Nerd Font";
       size = 11;
     };
     cursorTheme = {

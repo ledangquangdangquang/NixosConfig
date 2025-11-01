@@ -1,4 +1,5 @@
 {
+#Font size status bar 
   catppuccin.zathura = {
     enable = true;
     flavor = "mocha";
